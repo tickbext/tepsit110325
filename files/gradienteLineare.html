@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+    <html>
+        <body>
+            <canvas id="cnv" width="300" height="200"></canvas>
+            <script>
+                var c = document.getElementById("cnv");
+                var ctx = c.getContext("2d");
+
+                //x1,y1,x2,y2
+                var gradient = ctx.createLinearGradient(0, 0, 170, 170);
+                gradient.addColorStop(0, "magenta");
+                gradient.addColorStop(0.5, "blue");
+                gradient.addColorStop(1, "green");
+
+                //rettangolo
+                ctx.strokeStyle = gradient;
+                ctx.lineWidth = 5;
+                ctx.strokeRect(20, 20, 150, 150);
+                
+                //cerchio
+                /*ctx.beginPath();
+                ctx.strokeStyle = gradient;
+                ctx.lineWidth = 5;
+                ctx.arc(100, 75, 50, 0, 2 * Math.PI);
+                ctx.stroke();
+                */
+
+                /* colori random
+                var r, g, b
+                const a = 1
+
+                for (var j = 0; j <= 1; j = j+0.25){
+                    r = Math.random()*255
+                    g = Math.random()*255
+                    b = Math.random()*255
+                    gradient.addColorStop(j, `rgba(${r},${g},${b},${a})`)
+                }
+                */
+
+                
+            </script>
+        </body>
+    </html>

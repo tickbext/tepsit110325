@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <script src="https://cdn.plot.ly/plotly-2.18.2.min.js"></script>
+    </head>
+
+    <body>
+      <div id="pippo" style="width:100%;max-width:700px"></div>
+
+      <script>
+      var xArray = ["Italy", "France", "Spain", "USA", "Argentina"];
+      var yArray = [55, 49, 44, 24, 15];
+
+      var data = [{
+        x:xArray,
+        y:yArray,
+        type:"bar"
+      }];
+
+      var layout = {title:"Produzione Mondiale Vini"};
+
+      Plotly.newPlot("pippo", data, layout);
+      </script>
+
+    </body>
+  </html>

@@ -1,0 +1,40 @@
+<div id="demo" style="width: 200px;"> DOM in JS </div>
+
+<script>
+    var p = document.createElement("p");
+    var text = document.createTextNode("Elenco:");
+    p.appendChild(text);
+
+
+    var d = document.getElementById("demo");
+    d.appendChild(p);
+
+
+    //prima modifica (elenco puntato)
+    var ul = document.createElement("ul");
+
+    var l1 = document.createElement("li");
+    var text = document.createTextNode("primo valore");
+    l1.appendChild(text);
+    ul.appendChild(l1);
+
+    var l2 = document.createElement("li");
+    var text = document.createTextNode("secondo valore");
+    l2.appendChild(text);
+    ul.appendChild(l2); 
+    
+    p.appendChild(ul);
+
+
+    //seconda modifica: uso di insertBefore()
+    var p1 = document.createElement("p");
+    var text = document.createTextNode("Hola");
+    p1.appendChild(text);
+    d.insertBefore(p1,p);
+
+    //terza modifica: uso di removeChild()
+    d.removeChild(p1);
+
+    //quarta modifica: uso di replaceChild()
+    d.replaceChild(p1,p);
+</script>

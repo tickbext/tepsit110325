@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <title>Lista</title>
+
+    <script>
+        function aggiungi(){
+          var elemento = document.getElementById("valore")
+          var lista = document.getElementById("lista")
+                
+          var val = elemento.value
+          if(val.length == 0)
+            return
+                
+          lista.innerHTML += '<li>' + val + '</li>'
+          elemento.value = ""
+        }
+
+        function rimuovi(){
+          var elemento = document.getElementById("valore").value
+          //ritorna l'elenco di "figli" del nodo lista
+          //se volessi ottenere solo il primo figlio, dovrei utilizzare firstElementChild
+          var valori = document.getElementById("lista").children
+
+          for(var i = 0; i < valori.length; i++){
+            var e = valori[i]
+            
+            if(e.textContent == elemento){
+                e.remove()
+            }
+          }
+        }
+    </script>
+  </head>
+  
+  <body>
+
+      <input type="text" id="valore" placeholder="Inserisci un valore">
+
+      <input type="submit" value="Aggiungi" onclick="aggiungi()">
+      <input type="submit" value="Rimuovi" onclick="rimuovi()">
+
+      <ul id="lista">
+        <li>Uno</li>
+        <li>Due</li>
+        <li>Tre</li>
+        <li>Quattro</li>
+      </ul>
+
+  </body>
+</html>

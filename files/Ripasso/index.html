@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script language ="javascript" src="funzione.js"></script>
+  </head>
+  <body>
+    <div id="demo" style="width: 200px;"> DOM in JS </div>
+    <script>
+      var x = document.getElementById("demo");
+      x.style.color = "red";
+      x.style.backgroundColor = "yellow";  
+      
+      var p = document.createElement("p");
+      var text = document.createTextNode("Elenco:");
+      p.appendChild(text);
+
+      var d = document.getElementById("demo");
+      d.appendChild(p); 
+    </script>
+    <form>
+      <input type="button" value="Elenco" onclick="funzione1()" />    
+      <input type="button" value="Hola" onclick="funzione2()" />              
+    </form>       
+  </body>
+</html>
